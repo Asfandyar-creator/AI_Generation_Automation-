@@ -1,4 +1,4 @@
-# 🧠 AI Course Generation Automation
+# 🧠 AI Docs Generation Automation
 
 A complete automation pipeline that generates new, high-quality, SEO-ready training courses by scraping competitor data, intelligently clustering and summarizing it, and finally generating professional `.docx` course documents using AI.
 
