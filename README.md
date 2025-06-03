@@ -1,6 +1,6 @@
 # 🧠 AI Docs Generation Automation
 
-A complete automation pipeline that generates new, high-quality, SEO-ready training courses by scraping competitor data, intelligently clustering and summarizing it, and finally generating professional `.docx` course documents using AI.
+A complete automation pipeline that generates new, high-quality, SEO-ready training docs by scraping competitor data, intelligently clustering and summarizing it, and finally generating professional `.docx` course documents using AI.
 
 ---
 
@@ -9,7 +9,7 @@ A complete automation pipeline that generates new, high-quality, SEO-ready train
 This automation includes the following steps:
 
 1. **Scraping**  
-   Extract training courses using Web Scraper (Chrome Extension) from various competitor websites.
+   Extract training docs using Web Scraper (Chrome Extension) from various competitor websites.
 
 2. **Concatenation & Deduplication**  
    Merge multiple files per competitor and remove duplicates.  
@@ -19,17 +19,17 @@ This automation includes the following steps:
    Remove duplicates across all files and organize clean versions.  
    ➤ `remove_duplicates.py`
 
-4. **Filtering Existing Courses**  
+4. **Filtering Existing Docs**  
    Filter out any course already offered by the reference dataset.  
    ➤ `cfilecode.py`  
    - Compares against a reference course file (`Nos-Formations-Export-*.csv`)  
-   - Outputs: `C_final_file.xlsx`
+   - Outputs: `C_.xlsx`
 
 5. **Clustering & Classification**  
    Use OpenAI API to assign each new course to a cluster and a sub-thematique.  
    ➤ `clustering.py`  
-   - Inputs: `C_final_file.xlsx`  
-   - Outputs: `classified_courses_final.xlsx`
+   - Inputs: `C_.xlsx`  
+   - Outputs: `classified__final.xlsx`
 
 6. **Summarization & Pricing**  
    Summarize each cluster and apply pricing logic.  
@@ -54,8 +54,8 @@ project_root/
 │
 ├── 📂scraped_data/ # Raw scraped files (via Web Scraper)
 ├── 📂cleaned_data/ # Deduplicated .xlsx files
-├── 📂filtered_data/ # Competitor-only courses (C file)
-├── 📂clustered_data/ # Courses with cluster & sub-thematique labels
+├── 📂filtered_data/ # Competitor-only docs (C file)
+├── 📂clustered_data/ # Docs with cluster & sub-thematique labels
 ├── 📂summarized_data/ # Summarized cluster records
 ├── 📂generated_docs/ # Final .docx course documents
 │
@@ -86,9 +86,9 @@ python concatenate.py
 python remove_duplicates.py
 
 
-3. Filter Out Existing Courses
+3. Filter Out Existing Docs
 python cfilecode.py
-4. Cluster Courses with OpenAI
+4. Cluster Docs with OpenAI
 python clustering.py
 5. Summarize and Apply Pricing Logic
 python summarization_all.py
